@@ -1,9 +1,7 @@
 package global
 
-import (
-	"github.com/jinzhu/gorm"
-)
+import "xorm.io/xorm"
 
 var (
-	GVA_DB  *gorm.DB
+	GVA_DB *xorm.Engine
 )

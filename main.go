@@ -3,22 +3,22 @@ package main
 import (
 	"fmt"
 	"record_go_api/initialize"
-	"record_go_api/router/middleware/anthorization"
+	"record_go_api/model/recordTable"
 )
 
+//  https://tour.go-zh.org/moretypes/1  指针
 func main() {
 	// 初始化数据库
 	initialize.Mysql()
 	//initialize.RunWindowsServer()
 
-	if result, err := anthorization.GetToken("720ad1c464cd44458f4d0649885b37f8"); err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(result.UserId)
-		fmt.Println(result.Token)
-		fmt.Println(result.CreateTime)
-		fmt.Println(result.InvalidTime)
-
-	}
+	var info recordTable.Token
+	//result, error := info.One()
+	//result, error := info.CreateTokenModel(1121)
+	//result, error := info.GetToken("5f4deeffd43e4e38ae214d2869e9fe9b")
+	//result, error := info.CheckToken("5f4deeffd43e4e38ae214d2869e9fe9b")
+	result, error := info.DeleteToken(1121)
+	fmt.Println(result)
+	fmt.Println(error)
 
 }
