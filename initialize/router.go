@@ -11,6 +11,7 @@ func routers() *gin.Engine {
 	ApiGroup := Router.Group("")
 	//use api
 	router.InitRecordUserRouter(ApiGroup)
+	router.InitRecordTimeLineRouter(ApiGroup)
 	return Router
 }
 
